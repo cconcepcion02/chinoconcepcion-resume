@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      CHAT_API_HOST: 0.0.0.0
+      CHAT_API_PORT: 11435
+      WEB_HOST: 0.0.0.0
+      WEB_PORT: 4200
+      WEB_PROXY_CONFIG: proxy.conf.json
+      OLLAMA_HOST: http://host.docker.internal:11434
+    ports:
+      - "4200:4200"
+      - "11435:11435"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

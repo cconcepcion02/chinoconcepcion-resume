@@ -1,0 +1,400 @@
+<main class="page-shell">
+  <div class="background-scene" aria-hidden="true">
+    <div class="bg-veil"></div>
+    <div class="bg-beam beam-left"></div>
+    <div class="bg-beam beam-right"></div>
+    <div class="bg-mesh"></div>
+    <div class="bg-rings"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="bg-orb orb-three"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Chino Concepcion home">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Chino Concepcion</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [class.is-open]="menuOpen()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-navigation"
+      aria-label="Toggle navigation menu"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      class="site-nav"
+      id="primary-navigation"
+      aria-label="Primary"
+      [class.is-open]="menuOpen()"
+    >
+      <a href="#skills" (click)="closeMenu()">Skills</a>
+      <a href="#approach" (click)="closeMenu()">Approach</a>
+      <a href="#integrations" (click)="closeMenu()">Integrations</a>
+    </nav>
+
+    <button
+      class="theme-toggle"
+      type="button"
+      [attr.aria-label]="lightTheme() ? 'Switch to dark theme' : 'Switch to light theme'"
+      (click)="toggleTheme()"
+    >
+      <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="presentation">
+          <path
+            d="M12 4.75a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V5.5a.75.75 0 0 1 .75-.75Zm0 11a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Zm0 3.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V20a.75.75 0 0 1 .75-.75Zm7.25-7.25a.75.75 0 0 1 .75.75.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5ZM6.25 12a.75.75 0 0 1-.75.75H4a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 .75.75Zm10.58 5.33a.75.75 0 0 1 1.06 1.06l-1.06 1.06a.75.75 0 0 1-1.06-1.06l1.06-1.06Zm-9.66 0 1.06 1.06a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 1.06-1.06Zm9.66-10.66 1.06-1.06a.75.75 0 1 1 1.06 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06Zm-9.66 0a.75.75 0 0 1 0 1.06L6.11 8.79a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0Z"
+          />
+        </svg>
+      </span>
+      <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="presentation">
+          <path
+            d="M14.72 3.79a.75.75 0 0 1 .78.19 8.75 8.75 0 1 0 4.52 12.98.75.75 0 0 1 1.39.44A10.25 10.25 0 1 1 13.93 2.7a.75.75 0 0 1 .79 1.09 7.21 7.21 0 0 0-.93 3.55 7.23 7.23 0 0 0 5.5 7.02.75.75 0 0 1 .09 1.44 8.9 8.9 0 0 1-2.01.23 8.71 8.71 0 0 1-6.2-2.58 8.72 8.72 0 0 1-2.39-5.98c0-.79.1-1.56.31-2.31A8.75 8.75 0 0 0 19.3 15a8.96 8.96 0 0 0 .93-.05 8.75 8.75 0 0 0-5.51-11.16Z"
+          />
+        </svg>
+      </span>
+    </button>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">Full-Stack Developer • Cebu, Philippines</p>
+      <h1>Building scalable systems and AI-powered workflows that ship cleanly.</h1>
+      <p class="hero-text">
+        Chino Concepcion works across frontend, backend, databases, APIs, Docker deployment, and AI
+        integrations with a focus on modular architecture, production readiness, and practical implementation.
+      </p>
+
+      <div class="hero-actions">
+        <a class="primary-button" href="#skills">Explore Experience</a>
+        <a class="secondary-link" href="#integrations">See Integrations</a>
+      </div>
+
+      <div class="profile-inline">
+        <div class="profile-image-frame">
+          <img
+            class="profile-image"
+            src="images/profile/chino.jpeg"
+            alt="Portrait of Chino Concepcion"
+          />
+        </div>
+        <div class="profile-meta">
+          <p class="meta-label">Core Focus</p>
+          <p class="meta-value">Scalable backends, AI automations, microservices</p>
+          <div class="stack-strip" aria-label="Technology stack">
+            <span class="stack-icon" title="Angular" aria-label="Angular">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path fill="#DD0031" d="m12 2 8.66 3.09-1.32 11.45L12 22l-7.34-5.46L3.34 5.09z" />
+                <path fill="#C3002F" d="M12 2v20l7.34-5.46 1.32-11.45z" />
+                <path
+                  fill="#fff"
+                  d="M12 4.5 7.17 15.34h1.8l.97-2.42h4.08l.97 2.42h1.8L12 4.5Zm1.35 6.98h-2.7L12 8.2l1.35 3.28Z"
+                />
+              </svg>
+            </span>
+            <span class="stack-icon" title="React" aria-label="React">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <circle cx="12" cy="12" r="1.7" fill="#61DAFB" />
+                <ellipse cx="12" cy="12" rx="9" ry="3.8" fill="none" stroke="#61DAFB" stroke-width="1.5" />
+                <ellipse
+                  cx="12"
+                  cy="12"
+                  rx="9"
+                  ry="3.8"
+                  fill="none"
+                  stroke="#61DAFB"
+                  stroke-width="1.5"
+                  transform="rotate(60 12 12)"
+                />
+                <ellipse
+                  cx="12"
+                  cy="12"
+                  rx="9"
+                  ry="3.8"
+                  fill="none"
+                  stroke="#61DAFB"
+                  stroke-width="1.5"
+                  transform="rotate(120 12 12)"
+                />
+              </svg>
+            </span>
+            <span class="stack-icon" title="Python" aria-label="Python">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path
+                  fill="#3776AB"
+                  d="M12.1 2.5c-4 0-3.75 1.74-3.75 1.74l.01 1.8h3.82v.54H6.84S2.5 6.1 2.5 12c0 5.9 3.8 5.7 3.8 5.7h2.27v-3.19s-.12-3.8 3.73-3.8h6.43s3.61.06 3.61-3.48V5.98S22.9 2.5 18.26 2.5H12.1Zm-2.1 2.02a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32Z"
+                />
+                <path
+                  fill="#FFD43B"
+                  d="M11.9 21.5c4 0 3.75-1.74 3.75-1.74l-.01-1.8h-3.82v-.54h5.34s4.34.48 4.34-5.42c0-5.9-3.8-5.7-3.8-5.7h-2.27v3.19s.12 3.8-3.73 3.8H5.27s-3.61-.06-3.61 3.48v1.22s-.56 3.5 4.08 3.5h6.16Zm2.1-2.02a1.16 1.16 0 1 1 0-2.32 1.16 1.16 0 0 1 0 2.32Z"
+                />
+              </svg>
+            </span>
+            <span class="stack-icon" title="Node.js" aria-label="Node.js">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path fill="#539E43" d="M12 2.8 4.4 7.2v9.6l7.6 4.4 7.6-4.4V7.2L12 2.8Zm4.5 11.7c0 1.3-.76 1.84-1.87 1.84-.97 0-1.53-.5-1.82-1.12l1.02-.62c.2.36.38.66.81.66.41 0 .67-.16.67-.78V10.3h1.19v4.2Zm-4.72 1.83c-1.16 0-1.91-.55-2.27-1.27l1.02-.59c.27.45.62.78 1.25.78.52 0 .85-.26.85-.62 0-.43-.34-.58-.92-.83l-.31-.13c-.89-.38-1.48-.86-1.48-1.87 0-.93.71-1.64 1.82-1.64.79 0 1.35.27 1.76.99l-.96.61c-.21-.38-.44-.53-.8-.53-.36 0-.59.23-.59.53 0 .37.23.52.76.76l.31.13c1.05.45 1.64.91 1.64 1.95 0 1.12-.88 1.73-2.08 1.73Z" />
+              </svg>
+            </span>
+            <span class="stack-icon" title="Docker" aria-label="Docker">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path fill="#2496ED" d="M9.5 8.2h2.1v2H9.5v-2Zm-2.4 0h2.1v2H7.1v-2Zm4.8 0H14v2h-2.1v-2Zm-7.2 0h2.1v2H4.7v-2Zm4.8-2.4h2.1v2H9.5v-2Zm-2.4 0h2.1v2H7.1v-2Zm7.6 5.1c.27 1.83-.29 3.55-1.66 4.84-1.32 1.24-3.11 1.85-5.34 1.85-4.1 0-6.2-2-6.2-5.89 0-.34.03-.68.09-1h14.72c.24-.46.42-.95.52-1.47.74.14 1.34.43 1.79.88.58.59.87 1.38.87 2.38-1.03 0-1.97-.26-2.79-.79Z" />
+              </svg>
+            </span>
+            <span class="stack-icon" title="OpenAI" aria-label="OpenAI">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path
+                  fill="currentColor"
+                  d="M12 4.2a3.7 3.7 0 0 1 3.62 3.03 3.48 3.48 0 0 1 3.16 5.14 3.5 3.5 0 0 1-1.17 6.8 3.7 3.7 0 0 1-6.26 1.62 3.49 3.49 0 0 1-5.36-3.9A3.5 3.5 0 0 1 5.2 10.8 3.69 3.69 0 0 1 12 4.2Zm0 1.5a2.2 2.2 0 0 0-2.1 2.85l.17.5-.46.27-2.55 1.48a2 2 0 0 0-.74 2.73l.24.42-.26.41a2 2 0 0 0 2.59 2.92l.46-.21.33.38a2.2 2.2 0 0 0 3.64-.94l.14-.49h.5a2 2 0 0 0 1.04-3.71l-.43-.26.08-.49a2 2 0 0 0-1.95-2.32h-.49l-.14-.47A2.2 2.2 0 0 0 12 5.7Z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-strip" aria-label="Contact information">
+        <a class="contact-card" href="mailto:cconcepcion02@gmail.com">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">cconcepcion02@gmail.com</span>
+        </a>
+        <a class="contact-card" href="tel:09604762955">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">09604762955</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="slider-shell" id="skills">
+      <div class="slider-head">
+        <div class="slider-copy">
+          <p class="eyebrow">Experience Cards</p>
+          <h2>Full-stack execution with delivery discipline.</h2>
+          <p class="slider-intro">
+            I build systems that are useful in production, understandable to teams, and aligned with business goals.
+            My work combines frontend polish, backend reliability, deployment readiness, and applied AI into one
+            accountable engineering profile.
+          </p>
+          <p class="slider-intro slider-intro-strong">
+            If you need someone who can own features end to end, communicate clearly, and ship maintainable work
+            without excessive supervision, I bring that level of responsibility.
+          </p>
+        </div>
+      </div>
+
+      <div class="slider-stage">
+        <div class="carousel-aura"></div>
+        <div class="carousel-axis"></div>
+        <div class="carousel-stage">
+          @for (card of cards; track cardTrackBy($index, card); let index = $index) {
+            <article
+              class="skill-card"
+              [class.is-active]="isActiveCard(index)"
+              [ngStyle]="getCardStyle(index)"
+              [attr.id]="index === 5 ? 'approach' : index === 7 ? 'integrations' : null"
+            >
+              <div class="card-surface"></div>
+              <div class="card-glow"></div>
+              <div class="card-frame">
+                <span class="card-index">{{ (index + 1).toString().padStart(2, '0') }}</span>
+                <p class="card-kicker">{{ card.kicker }}</p>
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.body }}</p>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+
+      <div class="slider-footer">
+        <p class="slider-caption">
+          {{ (activeIndex() + 1).toString().padStart(2, '0') }} / {{ cards.length.toString().padStart(2, '0') }}
+          • {{ activeCard().title }}
+        </p>
+        <div class="slider-dots" aria-label="Card navigation">
+          @for (card of cards; track card.title; let index = $index) {
+            <button
+              class="slider-dot"
+              [class.is-active]="activeIndex() === index"
+              type="button"
+              [attr.aria-label]="'Go to card ' + (index + 1)"
+              (click)="goToCard(index)"
+            ></button>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trusted-strip" aria-labelledby="trusted-by-title">
+    <div class="trusted-copy">
+      <p class="eyebrow">Trusted By</p>
+    </div>
+
+    <div class="trusted-marquee" aria-label="Trusted by company placeholders">
+      <div class="trusted-track">
+        @for (logo of trustedLogos; track logo.name) {
+          <article class="trusted-logo-card" [attr.aria-label]="logo.name">
+            <span class="trusted-logo-mark" aria-hidden="true">{{ logo.mark }}</span>
+            <span class="trusted-logo-name">{{ logo.name }}</span>
+          </article>
+        }
+        @for (logo of trustedLogos; track logo.name + '-clone') {
+          <article class="trusted-logo-card is-clone" [attr.aria-label]="logo.name">
+            <span class="trusted-logo-mark" aria-hidden="true">{{ logo.mark }}</span>
+            <span class="trusted-logo-name">{{ logo.name }}</span>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="chat-widget" id="chat-widget" [class.is-open]="chatOpen()">
+    <button
+      class="chat-trigger"
+      [class.is-thinking]="chatBusy()"
+      type="button"
+      [attr.aria-expanded]="chatOpen()"
+      (click)="toggleChat()"
+      aria-label="Toggle chat widget"
+    >
+      <span class="chat-trigger-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="presentation">
+          <path
+            d="M12 3C6.477 3 2 7.03 2 12c0 2.406 1.05 4.592 2.76 6.204V22l3.49-1.918A10.88 10.88 0 0 0 12 21c5.523 0 10-4.03 10-9s-4.477-9-10-9Zm-4.8 7.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Zm4.8 0a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Zm4.8 0a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"
+          />
+        </svg>
+      </span>
+    </button>
+
+    <div class="chat-panel" *ngIf="chatOpen()">
+      <div class="chat-panel-header">
+        <div>
+          <p class="meta-label">AI Assistant</p>
+          <h2>Chino Agent</h2>
+        </div>
+        <div class="chat-header-actions">
+          <span class="chat-badge">{{ chatEnabled ? 'Online' : 'Static Only' }}</span>
+          <button class="chat-close" type="button" (click)="toggleChat()" aria-label="Close chat">
+            ×
+          </button>
+        </div>
+      </div>
+
+      <div class="chat-messages" #messagesContainer>
+        @for (message of messages(); track $index) {
+          <div class="chat-message" [class.is-user]="message.role === 'user'">
+            @if (message.attachments?.length) {
+              <div class="message-attachments">
+                @for (attachment of message.attachments; track attachmentTrackBy($index, attachment)) {
+                  <div class="message-attachment-chip">
+                    @if (attachment.kind === 'image' && attachment.previewUrl) {
+                      <img [src]="attachment.previewUrl" [alt]="attachment.name" />
+                    } @else if (attachment.kind === 'audio' && attachment.previewUrl) {
+                      <audio controls [src]="attachment.previewUrl"></audio>
+                    } @else {
+                      <span class="message-file-name">{{ attachment.name }}</span>
+                    }
+                  </div>
+                }
+              </div>
+            }
+            <div class="chat-message-content" [innerHTML]="message.html"></div>
+          </div>
+        }
+        @if (chatBusy()) {
+          <div class="chat-message chat-message-thinking">
+            <div class="thinking-dots" aria-label="Agent is thinking">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        }
+      </div>
+
+      <label class="chat-composer">
+        <span class="sr-only">Message</span>
+        @if (attachments().length) {
+          <div class="composer-attachments">
+            @for (attachment of attachments(); track attachmentTrackBy($index, attachment)) {
+              <div class="composer-attachment">
+                @if (attachment.kind === 'image' && attachment.previewUrl) {
+                  <img [src]="attachment.previewUrl" [alt]="attachment.name" />
+                } @else if (attachment.kind === 'audio' && attachment.previewUrl) {
+                  <audio controls [src]="attachment.previewUrl"></audio>
+                } @else {
+                  <span class="composer-file-label">{{ attachment.name }}</span>
+                }
+                <button
+                  class="attachment-remove"
+                  type="button"
+                  (click)="removeAttachment(attachment.id)"
+                  [attr.aria-label]="'Remove ' + attachment.name"
+                >
+                  ×
+                </button>
+              </div>
+            }
+          </div>
+        }
+        <textarea
+          rows="2"
+          [value]="draftMessage()"
+          (input)="updateDraft($event)"
+          (keydown)="handleComposerKeydown($event)"
+          [placeholder]="chatEnabled ? 'Type a message...' : 'Assistant disabled in static Apache build'"
+          [disabled]="chatBusy() || !chatEnabled"
+        ></textarea>
+      </label>
+
+      <div class="chat-actions">
+        <button
+          class="mic-button"
+          type="button"
+          [class.is-recording]="recording()"
+          [disabled]="chatBusy() || !chatEnabled"
+          (click)="toggleRecording()"
+          [attr.aria-label]="recording() ? 'Stop recording' : 'Start recording'"
+        >
+          <span class="mic-icon" aria-hidden="true">🎤</span>
+        </button>
+        <label class="audio-button" aria-label="Upload audio">
+          <input
+            type="file"
+            accept="audio/*"
+            [disabled]="!chatEnabled"
+            (change)="handleAudioSelection($event)"
+          />
+          <span>♫</span>
+        </label>
+        <label class="attachment-button" aria-label="Attach files">
+          <input
+            type="file"
+            multiple
+            accept="image/*,audio/*,.pdf,.doc,.docx,.txt,.csv,.json,.md"
+            [disabled]="!chatEnabled"
+            (change)="handleAttachmentSelection($event)"
+          />
+          <span>+</span>
+        </label>
+        <span class="chat-status">
+          {{ chatStatus() }}
+        </span>
+        <button class="chat-send" type="button" (click)="sendMessage()" [disabled]="chatBusy() || !chatEnabled">
+          {{ chatBusy() ? 'Sending' : 'Send' }}
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
